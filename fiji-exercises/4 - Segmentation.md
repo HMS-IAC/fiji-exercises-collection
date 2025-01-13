@@ -62,7 +62,7 @@
 
 ## 4.3 - DAPI segmentation with Weka
 
-1. open the [hela-1.tif](images/hela-1.tif) image (drag & drop, or `File > Open`)
+1. open the [hela.tif](images/hela.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
 3. `Plugins > Segmentation > Trainable Weka Segmentation`
 4. draw a line outside a nucleus
