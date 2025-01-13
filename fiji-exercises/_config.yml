@@ -11,15 +11,9 @@ execute:
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: fiji-exercises.tex
-
-# Define the name of the output file for HTML builds
-html:
-  extra_js:
-    - _static/custom_javascript.js
-
+# latex:
+  # latex_documents:
+    # targetname: fiji-exercises.tex
 
 # Add a bibtex file so that we can create citations
 # bibtex_bibfiles:
