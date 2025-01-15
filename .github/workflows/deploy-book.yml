@@ -39,7 +39,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          jupyter-book build .
+          jupyter-book build fiji-exercises
   
       - name: Deploy the book
         uses: peaceiris/actions-gh-pages@v4
