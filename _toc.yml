@@ -8,8 +8,8 @@ defaults:
 parts:
 - caption: Fiji Exercises
   chapters:
-  - file: 'chapters/1 - Working with Single-Channel Images'
-  - file: 'chapters/2 - Working with Multi-Channel Images'
-  - file: 'chapters/3 - Image Processing: Filters'
-  - file: 'chapters/4 - Segmentation'
-  - file: 'chapters/5 - Spot Detection'
+  - file: 'chapters/1_Working with Single-Channel Images'
+  - file: 'chapters/2_Working with Multi-Channel Images'
+  - file: 'chapters/3_Image Processing: Filters'
+  - file: 'chapters/4_Segmentation'
+  - file: 'chapters/5_Spot Detection'
