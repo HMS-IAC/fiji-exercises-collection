@@ -4,7 +4,7 @@
 
 1. open the [DAPI.tif](images/DAPI.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
-3. `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+3. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 4. `Image > Adjust > Threshold` (IJ:28.2.4)
 5. understand the function of the `Dark Background` checkbox (inspect pixel values)
 6. try setting sliders manually. Can you find a good threshold range?
@@ -16,12 +16,12 @@
 11. apply watershed to divide touching objects
     - select the binary image
     - `Process > Binary > Watershed`
-12. proceed with `Analyze > Analyze Particles`
+12. proceed with `Analyze > Analyze Particles` (IJ:30.2)
     - select `Exclude on Edges` and `Add to Manager`
     - click on `OK`
 13. bonus: repeat step 12 but use the `Size` and `Circularity` options to try to exclude some particles and the `Show` dropdown menu to visualize different outputs.
 14. set the parameters you want to measure:
-    - `Analyze > Set Measurement`
+    - `Analyze > Set Measurement` (IJ:30.2)
     - select `Area`, `Mean gray value`, `Min & max gray value`, `Display label`
     - click on `OK`
 15. select the original image (open it again as in step 1 if you do not have it)
@@ -32,7 +32,7 @@
 
 1. open the [DAPI_noise.tif](images/DAPI_noise.tif) image (drag & drop, or `File > Open`)
 2. change LUT to Grays
-3. `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+3. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 4. `Image > Adjust > Threshold` (IJ:28.2.4)
 5. understand the function of the `Dark Background` checkbox (inspect pixel values)
 6. try setting sliders manually. Can you find a good threshold range?
@@ -48,12 +48,12 @@
 11. apply watershed to divide touching objects
     - select the binary image
     - `Process > Binary > Watershed`
-12. proceed with `Analyze > Analyze Particles`
+12. proceed with `Analyze > Analyze Particles` (IJ:30.2)
     - select `Exclude on Edges` and `Add to Manager`
     - click on `OK`
 13. bonus: repeat step 12 but use the `Size` and `Circularity` options to try to exclude some particles and the `Show` dropdown menu to visualize different outputs.
 14. set the parameters you want to measure:
-    - `Analyze > Set Measurement`
+    - `Analyze > Set Measurement` (IJ:30.2)
     - select `Area`, `Mean gray value`, `Min & max gray value`, `Display label`
     - click on `OK`
 15. select the original image (open it again as in step 1 if you do not have it)

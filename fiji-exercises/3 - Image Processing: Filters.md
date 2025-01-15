@@ -3,7 +3,7 @@
 ## 3.1 - Edge filters - vertical stripes
 
 1. open the [vertical_stripes.tif](images/vertical_stripes.tif) image (drag & drop, or `File > Open`)
-2. `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
@@ -17,7 +17,7 @@
     - click on `OK`.
     - do you understand the output of this process?
 4. select the original `vertical_stripes.tif` image and duplicate it again.
-    - `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+    - `Image > Duplicate` (IJ:28.9) (**shift + d**)
 5. apply vertical Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
@@ -36,7 +36,7 @@
 The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes), only the input image differs.
 
 1. open the [horizontal_stripes.tif](images/horizontal_stripes.tif) image (drag & drop, or `File > Open`)
-2. `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
@@ -50,7 +50,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
     - click on `OK`.
     - do you understand the output of this process?
 4. select the original `vertical_stripes.tif` image and duplicate it again.
-    - `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+    - `Image > Duplicate` (IJ:28.9) (**shift + d**)
 5. apply vertical Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
@@ -69,7 +69,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
 The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes) and [3.2](#edge-filters-horizontal-stripes) only the input image differs.
 
 1. open the [checkerboard.tif](images/checkerboard.tif) image (drag & drop, or `File > Open`)
-2. `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
@@ -83,7 +83,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
     - click on `OK`.
     - do you understand the output of this process?
 4. select the original `checkerboard.tif` image and duplicate it again.
-    - `Image > Duplicate` (IJ:28.9) (**shortcut: shift + d**)
+    - `Image > Duplicate` (IJ:28.9) (**shift + d**)
 5. apply vertical Prewitt filter:
     - `Process > Filters > Convolve`
     - as kernel input (Prewitt):
