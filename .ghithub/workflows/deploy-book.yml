@@ -6,6 +6,8 @@ on:
     branches:
     - main
 
+  workflow_dispatch: # allows you to run this workflow manually
+
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
