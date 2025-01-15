@@ -30,6 +30,11 @@ jobs:
       - name: Build the book
         run: |
           jupyter-book build .
+
+      # Create a .nojekyll file to avoid Jekyll processing.
+      # It can be necessary for GitHub Pages to render the book correctly.
+      - name: Create .nojekyll file
+        run: echo "" > ./_build/html/.nojekyll
   
       - name: Deploy the book
         uses: peaceiris/actions-gh-pages@v4
