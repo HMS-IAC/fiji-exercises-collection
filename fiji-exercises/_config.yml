@@ -3,7 +3,10 @@
 
 title: Fiji Exercises Collection
 author: Image Analysis Collaboratory, Harvard Medical School, Boston, MA, USA - https://iac.hms.harvard.edu
+copyright: "2025"
 logo: logo/iac_logo_white.png
+
+exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -21,3 +24,9 @@ execute:
 # html:
 #   use_issues_button: true
 #   use_repository_button: true
+
+html:
+  extra_footer: |
+      <p>
+      All content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, except where noted otherwise.
+      </p>

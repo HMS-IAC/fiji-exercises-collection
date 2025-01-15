@@ -1,5 +1,5 @@
 # Fiji Exercises Collection
-<strong>By the <a href="https://iac.hms.harvard.edu/" target="_blank">Image Analysis Collaboratory</a></strong>
+<strong>By the <a href="https://iac.hms.harvard.edu/" target="_blank">Image Analysis Collaboratory</a> @ Harvard Medical School</strong>
 
 <p>This is a collection of exercises for the open-source <a href="https://fiji.sc/" target="_blank">Fiji</a> software.</p>
 
