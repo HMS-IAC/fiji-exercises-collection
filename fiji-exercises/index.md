@@ -1,6 +1,8 @@
 # Fiji Exercises Collection
 <strong>By the <a href="https://iac.hms.harvard.edu/" target="_blank">Image Analysis Collaboratory</a> @ Harvard Medical School</strong>
 
+<br>
+
 <p>This is a collection of exercises for the open-source <a href="https://fiji.sc/" target="_blank">Fiji</a> software.</p>
 
 The exercises are designed to be used in a classroom setting, but can also be used for self-study. They are divided into sections, each of which covers a different topic and/or a different aspect of Fiji.
@@ -25,6 +27,11 @@ You can perform each exercise using the **provided image(s)** (click the image n
 
 For certain Fiji commands, references to the [ImageJ User Guide](https://imagej.net/ij/docs/guide/) are included (e.g. **IJ:28.9**) as a helpful resource for learning more about Fiji’s features and capabilities.
 
-If a command has a keyboard shortcut, it is indicated in parentheses in **bold** for your convenience (e.g. **shift + d**).
+If a command has a keyboard shortcut, it is indicated in parentheses in **bold** (e.g. **shift + d**).
 
 Have fun!
+
+<br>
+
+```{tableofcontents}
+```

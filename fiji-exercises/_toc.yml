@@ -2,12 +2,14 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: Fiji Exercises
-  sections:
-  - file: '1 - Working with Single-Channel Images'
-  - file: '2 - Working with Multi-Channel Images'
-  - file: '3 - Image Processing: Filters'
-  - file: '4 - Segmentation'
-  - file: '5 - Spot Detection'
+root: index
+defaults:
+  caption: Default Caption # See https://github.com/executablebooks/jupyter-book/issues/2009
+parts:
+- caption: Fiji Exercises
+  chapters:
+  - file: 'chapters/1 - Working with Single-Channel Images'
+  - file: 'chapters/2 - Working with Multi-Channel Images'
+  - file: 'chapters/3 - Image Processing: Filters'
+  - file: 'chapters/4 - Segmentation'
+  - file: 'chapters/5 - Spot Detection'
