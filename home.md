@@ -28,7 +28,7 @@ Here is an example illustrating the structure of the exercises:
 
 You can perform each exercise using the **provided image(s)** (click the image name to download it - note that downloads may not work properly in Safari) or with **your own images**.
 
-For certain Fiji commands, references to the [ImageJ User Guide](https://imagej.net/ij/docs/guide/) are included (e.g. **IJ:28.9**) as a helpful resource for learning more about Fiji’s features and capabilities.
+For certain Fiji commands, references to the <a href="https://imagej.net/ij/docs/guide/" target="_blank">ImageJ User Guide</a> are included (e.g. **IJ:28.9**) as a helpful resource for learning more about Fiji’s features and capabilities.
 
 If a command has a keyboard shortcut, it is indicated in parentheses in **bold** (e.g. **shift + d**).
 
