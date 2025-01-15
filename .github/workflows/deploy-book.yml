@@ -31,7 +31,7 @@ jobs:
         run: |
           jupyter-book build .
 
-  
+      # Deploy the book
       - name: Deploy the book
         uses: peaceiris/actions-gh-pages@v4
         with:
