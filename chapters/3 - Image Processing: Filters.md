@@ -1,4 +1,4 @@
-# 3 - Image Processing: Thresholding & Filters
+# 3 - Image Processing
 
 ## 3.1 - Edge filters - vertical stripes
 
