@@ -1,4 +1,4 @@
-# 3 - Image Processing
+# 3 - Image Processing: Filters
 
 ## 3.1 - Edge filters - vertical stripes
 
