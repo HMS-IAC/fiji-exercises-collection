@@ -42,7 +42,7 @@ jobs:
       - name: Build the book
         run: |
           jupyter-book build .
-          touch ./build/.nojekyll
+          touch ./_build/.nojekyll
 
       # Deploy the book
       - name: Deploy the book
