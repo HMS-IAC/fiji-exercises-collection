@@ -2,7 +2,7 @@
 
 ## 1.1 - Image inspection
 
-1. open the [single_channel.tif](images/single_channel.tif) image (drag & drop, or `File > Open`)
+1. open the [single_channel.tif](../images/single_channel.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. `Analyze > Histogram` (IJ:30.10) (**h**)
 4. click `live`
@@ -14,7 +14,7 @@
 
 ## 1.2 - Adjust brightness/contrast of all open images
 
-1. open the three `single_channel_...tif` images in folder [for_exercise_1.2](images/for_exercise_1.2.zip) (drag & drop, or `File > Open`)
+1. open the three `single_channel_...tif` images in folder [for_exercise_1.2](../images/for_exercise_1.2.zip) (drag & drop, or `File > Open`)
 2. for all images: `Analyze > Histogram` (IJ:30.10) (**h**)
     - click `live`
 3. for one image: `Image > Adjust > Brightness/Contrast` (**shift + c**)
