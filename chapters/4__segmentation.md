@@ -2,7 +2,6 @@
 
 ## 4.1 - DAPI segmentation with thresholding
 
-
 1. open the [DAPI.tif](../images/DAPI.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
 3. `Image > Duplicate` (IJ:28.9) (**shift + d**)
