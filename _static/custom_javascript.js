@@ -10,6 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = 'https://iac.hms.harvard.edu'; // Navigate to the specified website
                 return; // Exclude download if the image is named "iac_logo_white"
             }
+            if (imageName === 'badge.svg') {
+                window.location.href = 'https://jupyterbook.org'; // Navigate to Jupyter Book website
+                return; // Exclude download if the image is named "badge.svg"
+            }
+            if (imageName === 'License-CC_BY_4.0-blue.svg') {
+                window.location.href = 'https://creativecommons.org/licenses/by/4.0/'; // Navigate to CC BY 4.0 license
+                return; // Exclude download if the image is named "blue.svg"
+            }
+            if (imageName === 'PDF-Download-blue.svg') {
+                window.location.href = '_build/pdf/book.pdf'; // Navigate to PDF download
+                return; // Exclude download if the image is named "blue"
+            }
             const link = document.createElement('a');
             link.href = img.src; // Set the image source as the download URL
             link.download = imageName; // Use the image file name for download

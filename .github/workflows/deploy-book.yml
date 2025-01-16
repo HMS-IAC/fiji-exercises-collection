@@ -43,6 +43,7 @@ jobs:
       - name: Build the book
         run: |
           jupyter-book build .
+          jb build . --builder pdfhtml
           touch ./_build/.nojekyll
 
       # Deploy the book
