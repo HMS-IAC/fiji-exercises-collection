@@ -2,7 +2,7 @@
 
 ## 3.1 - Edge filters - vertical stripes
 
-1. open the [vertical_stripes.tif](images/vertical_stripes.tif) image (drag & drop, or `File > Open`)
+1. open the [vertical_stripes.tif](../images/vertical_stripes.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
@@ -35,7 +35,7 @@
 
 The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes), only the input image differs.
 
-1. open the [horizontal_stripes.tif](images/horizontal_stripes.tif) image (drag & drop, or `File > Open`)
+1. open the [horizontal_stripes.tif](../images/horizontal_stripes.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
@@ -68,7 +68,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
 
 The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes) and [3.2](#edge-filters-horizontal-stripes) only the input image differs.
 
-1. open the [checkerboard.tif](images/checkerboard.tif) image (drag & drop, or `File > Open`)
+1. open the [checkerboard.tif](../images/checkerboard.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. apply horizontal Prewitt filter:
     - `Process > Filters > Convolve`
@@ -99,7 +99,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
 
 ## 3.4 - Morphological filters - Binary
 
-1. open the [exercise_morphology.tif](images/exercise_morphology.tif) image (drag & drop, or `File > Open`)
+1. open the [exercise_morphology.tif](../images/exercise_morphology.tif) image (drag & drop, or `File > Open`)
 2. duplicate the image 4 times and name each copy as follow:
     - Eroded
     - Dilated
@@ -112,7 +112,7 @@ The steps in this exercise are identical to [3.1](#edge-filters-vertical-stripes
 
 ## 3.5 - Morphological filters - Gray
 
-1. open the [exercise_morphology.tif](images/exercise_morphology.tif) image (drag & drop, or `File > Open`)
+1. open the [exercise_morphology.tif](../images/exercise_morphology.tif) image (drag & drop, or `File > Open`)
 2. apply Gray Morphological filters:
     - `Process > Morphology > Gray Morphology`
 3. apply image **opening** with **circular** structuring element with **radius 3** - removes noise

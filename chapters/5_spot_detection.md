@@ -3,7 +3,7 @@
 ## 5.1 - Manual spot detection with the Multi-point Tool
 
 1. read all the next steps before beginning
-2. open the `beads_001.tif` image in folder [spot_detection](images/spot_detection.zip) (drag & drop, or `File > Open`)
+2. open the `beads_001.tif` image in folder [spot_detection](../images/spot_detection.zip) (drag & drop, or `File > Open`)
 3. right-click (ctrl-click) on the `Point Tool` in the tool bar and select `MultiTool` (IJ:19.5)
 4. double-click on the `Point Tool` in the `toolbar` and customize to your liking (test on image, clear points by `shift + a`)
 5. count all beads by clicking on them one by one
@@ -17,7 +17,7 @@
 
 useful [Find Maxima info](https://forum.image.sc/t/new-maxima-finder-menu-in-fiji/25504) on the image.sc forum.
 
-1. open the `beads_001.tif` image in folder [spot_detection](images/spot_detection.zip) (drag & drop, or `File > Open`)
+1. open the `beads_001.tif` image in folder [spot_detection](../images/spot_detection.zip) (drag & drop, or `File > Open`)
 2. `Process > Find Maxima`
 3. check `Preview point selection`
 4. try different values for `Prominence` and the three checkboxes
@@ -34,7 +34,7 @@ useful [Find Maxima info](https://forum.image.sc/t/new-maxima-finder-menu-in-fij
 
 ## 5.3 - Automatic spot segmentation with thresholding
 
-1. open the `beads_001.tif` image in folder [spot_detection](images/spot_detection.zip) (drag & drop, or `File > Open`)
+1. open the `beads_001.tif` image in folder [spot_detection](../images/spot_detection.zip) (drag & drop, or `File > Open`)
 2. `Image > Adjust > Threshold` (IJ:28.2.4)
     - select Otsu, then `Apply`
 3. `Analyze > Set Measurements` (IJ:30.7)
@@ -50,11 +50,11 @@ useful [Find Maxima info](https://forum.image.sc/t/new-maxima-finder-menu-in-fij
 
 ## 5.4 - Spot detection with noise
 
-1. Repeat [5.2](#algorithmic-spot-detection-with-find-maxima) with the `with_noise_8000.tif` image in folder [spot_detection](images/spot_detection.zip)
+1. Repeat [5.2](#algorithmic-spot-detection-with-find-maxima) with the `with_noise_8000.tif` image in folder [spot_detection](../images/spot_detection.zip)
     - consider smoothing the image first. You can try any of the filter in the `Process > Filters` menu:
         - e.g. `Process > Filters > Gaussian Blur`, `Process > Filters > Mean`, ...
         - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter wuth radius 1 (3x3 kernel)
-2. Repeat [5.3](#automatic-spot-segmentation-with-thresholding) with the `with_noise_8000.tif` image in folder [spot_detection](images/spot_detection.zip)
+2. Repeat [5.3](#automatic-spot-segmentation-with-thresholding) with the `with_noise_8000.tif` image in folder [spot_detection](../images/spot_detection.zip)
     - consider smoothing the image first. You can try any of the filter in the `Process > Filters` menu:
         - e.g. `Process > Filters > Gaussian Blur`, `Process > Filters > Mean`, ...
         - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter wuth radius 1 (3x3 kernel)
@@ -64,8 +64,8 @@ useful [Find Maxima info](https://forum.image.sc/t/new-maxima-finder-menu-in-fij
 
 ## 5.5 - Spot detection with variable background
 
-1. Repeat [5.2](#algorithmic-spot-detection-with-find-maxima) with the `beads_001_ramp.tif` image in folder [spot_detection](images/spot_detection.zip)
-2. Repeat [5.3](#automatic-spot-segmentation-with-thresholding) with the `beads_001_ramp.tif` image in folder [spot_detection](images/spot_detection.zip)
+1. Repeat [5.2](#algorithmic-spot-detection-with-find-maxima) with the `beads_001_ramp.tif` image in folder [spot_detection](../images/spot_detection.zip)
+2. Repeat [5.3](#automatic-spot-segmentation-with-thresholding) with the `beads_001_ramp.tif` image in folder [spot_detection](../images/spot_detection.zip)
 3. Compare and comment on the performance of the two methods
     - Which one is better?
     - Why/how is it better?

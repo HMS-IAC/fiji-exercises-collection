@@ -51,4 +51,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
           keep_files: false
-          # force_orphan: true
+          force_orphan: true
