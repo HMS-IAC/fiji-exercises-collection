@@ -5,9 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     images.forEach(img => {
         img.addEventListener('click', function (event) {
             event.preventDefault(); // Prevent default click behavior (opening the image)
+            const imageName = img.src.split('/').pop();
+            if (imageName === 'iac_logo_white.png') {
+                window.location.href = 'https://iac.hms.harvard.edu'; // Navigate to the specified website
+                return; // Exclude download if the image is named "iac_logo_white"
+            }
             const link = document.createElement('a');
             link.href = img.src; // Set the image source as the download URL
-            link.download = img.src.split('/').pop(); // Use the image file name for download
+            link.download = imageName; // Use the image file name for download
             link.click(); // Programmatically click the link to trigger download
         });
     });
