@@ -79,3 +79,6 @@
     - to measure, proceed by thresholding (“set” both threshold values to 1), then Analyze Particles, etc
     - alternatively, multiply all values in the Labkit output image by 255, then apply Binarize, etc
 14. save the resulting image with name “myLabkitHeLa1.tif”: `File > Save As > Tiff`
+
+
+## 4.4 - DAPI segmentation with Labkit multiclass
