@@ -64,8 +64,8 @@
 
 1. open the [hela.tif](../data/hela.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
-3. `Plugins > Segmentation > Open Current Image With Labkit`
-4. sidebar, under `Segmentation`: Click `Labkit Pixel Classification`
+3. `Plugins > Labkit > Open Current Image With Labkit`
+4. sidebar, under `Segmentation`: click `Labkit Pixel Classification`
 5. topbar: select the pencil tool 
 6. sidebar: select `foreground`. Draw a line inside a nucleus
 7. sidebar: select `background`. Draw a line outside a nucleus 
@@ -76,6 +76,31 @@
 12. export the segmentation: click the drop down menu next to `Labkit Pixel Classifier`: `Segmentation > Show Segmentation Results in ImageJ`
 13. inspect results, do you understand the meaning of the pixel values?
     - you now have a binary image, but not the kind Fiji likes
-    - to measure, proceed by thresholding (“set” both threshold values to 1), then Analyze Particles, etc
+    - to measure, proceed by thresholding (`Image > Adjust > Threshold...`): “set” both threshold values to 1, then Analyze Particles, etc
     - alternatively, multiply all values in the Labkit output image by 255, then apply Binarize, etc
 14. save the resulting image with name “myLabkitHeLa1.tif”: `File > Save As > Tiff`
+
+
+## 4.4 - DAPI double-segmentation with Labkit 
+1. open the [hela.tif](../data/hela.tif) image (drag & drop, or `File > Open`)
+2. change `LUT` to Grays
+3. `Process > Enhance Contrast`. check `Equalize histogram`. Then, `OK`
+4. `Plugins > Labkit > Open Current Image With Labkit`
+5. sidebar, under `Segmentation`: click `Labkit Pixel Classification`
+6. sidebar, under `Labeling`: click `add label`
+7. rename `Label 1` by doublecklicking. For instance into `cytoplasm`. Optional: choose a different label color by clicking onto the color swatch. 
+8. topbar: select the pencil tool 
+9. sidebar: select `foreground`. Draw a line inside a nucleus
+10. sidebar: select `cytoplasm`. Draw a line inside the cytoplasm
+11. sidebar: select `background`. Draw a line where there is no cell
+12. sidebar: click the play button next to `Labkit Pixelclassification`
+13. repeat the last four steps until happy with result
+14. click the drop down menu next to `Labkit Pixel Classifier`. Select `Show Probability Map in ImageJ`
+15. inspect the probability maps, do you understand the meaning of the values of the pixels in the different channels?
+16. export the segmentation: click the drop down menu next to `Labkit Pixel Classifier`: `Segmentation > Show Segmentation Results in ImageJ`
+17. inspect results, do you understand the meaning of the pixel values?
+    - you now have an image with three values
+    - to measure, proceed by thresholding (`Image > Adjust > Threshold...`) at 0, 1, and 2, to extract each class (use Set and then set both thresholds to 0, 1, or 2)
+    - then proceed with Analyze Particles, etc for each of the classes of
+interest (nuclei and cytoplasm)
+18. Bonus round: play with Settings
