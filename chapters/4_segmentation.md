@@ -60,23 +60,22 @@
 16. in the `ROI Manager`, click on `Deselect` and then on `Measure`
 17. save the `Results` table as .csv: select the table and click on `File > Save As`
 
-## 4.3 - DAPI segmentation with Weka
+## 4.3 - DAPI segmentation with Labkit 
 
 1. open the [hela.tif](../data/hela.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
-3. `Plugins > Segmentation > Trainable Weka Segmentation`
-4. draw a line outside a nucleus
-5. click `Add to class 1`
-6. draw a line inside a nucleus
-7. click `Add to class 2`
-8. click `Train classifier`
-9. repeat the last four steps until happy with result
-10. click `Get probability`
+3. `Plugins > Segmentation > Open Current Image With Labkit`
+4. sidebar, under `Segmentation`: Click `Labkit Pixel Classification`
+5. topbar: select the pencil tool 
+6. sidebar: select `foreground`. Draw a line inside a nucleus
+7. sidebar: select `background`. Draw a line outside a nucleus 
+8. sidebar: click the play button next to `Labkit Pixelclassification`
+9. repeat the last three steps until happy with result
+10. click the drop down menu next to `Labkit Pixel Classifier`. Select `Show Probability Map in ImageJ`
 11. inspect the probability maps, do you understand the meaning of the values of the pixels in the different channels?
-12. click `Create result`
-13. inspect results, do you understand the meaning of the values of the pixels in the different channels?
+12. export the segmentation: click the drop down menu next to `Labkit Pixel Classifier`: `Segmentation > Show Segmentation Results in ImageJ`
+13. inspect results, do you understand the meaning of the pixel values?
     - you now have a binary image, but not the kind Fiji likes
     - to measure, proceed by thresholding (“set” both threshold values to 1), then Analyze Particles, etc
-    - alternatively, multiply all values in the Weka output image by 255, then apply Binarize, etc
-14. save the resulting image with name “myWekaHeLa1.tif”: `File > Save As > Tiff`
-15. bonus round: play with `Settings`
+    - alternatively, multiply all values in the Labkit output image by 255, then apply Binarize, etc
+14. save the resulting image with name “myLabkitHeLa1.tif”: `File > Save As > Tiff`
