@@ -38,8 +38,3 @@ For certain Fiji commands, references to the <a href="https://imagej.net/ij/docs
 If a command has a keyboard shortcut, it is indicated in parentheses in **bold** (e.g. **shift + d**).
 
 Have fun!
-
-<br>
-
-```{tableofcontents}
-```
