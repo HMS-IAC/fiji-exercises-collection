@@ -6,7 +6,7 @@ author: Image Analysis Collaboratory, Harvard Medical School, Boston, MA, USA - 
 copyright: "2025"
 logo: logo/iac_logo_white.png
 
-exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints", README.md, _internal/**]
+exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints", README.md, _internal/**, build_book.sh]
 
 # See https://jupyterbook.org/content/execute.html
 execute:
