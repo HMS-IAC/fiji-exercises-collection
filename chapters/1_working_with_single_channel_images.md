@@ -5,7 +5,7 @@
 1. open the [single_channel.tif](../images/single_channel.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. `Analyze > Histogram` (IJ:30.10) (**h**)
-4. click `live`
+4. click `Live`
 5. `Image > Adjust > Brightness/Contrast` (**shift + c**)
     - play with `Maximum`, `Minimum`, `Brightness` and `Contrast` sliders and with `Auto`, `Set` and `Reset`
     - observe the histogram window, what is changing, what is not?
@@ -16,7 +16,7 @@
 
 1. open the three `single_channel_...tif` images in folder [for_exercise_1.2](../images/for_exercise_1.2.zip) (drag & drop, or `File > Open`)
 2. for all images: `Analyze > Histogram` (IJ:30.10) (**h**)
-    - click `live`
+    - click `Live`
 3. for one image: `Image > Adjust > Brightness/Contrast` (**shift + c**)
 4. adjust contrast with `Maximum`, `Minimum`, `Brightness` or `Contrast` sliders or `Auto`
 5. click `Set`
