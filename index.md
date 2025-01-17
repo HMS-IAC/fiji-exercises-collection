@@ -13,7 +13,7 @@ The exercises are designed to be used in a classroom setting, but can also be us
 
 Here is an example illustrating the structure of the exercises:
 
-## 1.1 - Image inspection
+<span style="font-size: 1.5em;">**1.1 - Image inspection**</span>
 
 1. open the [single_channel.tif](images/single_channel.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
