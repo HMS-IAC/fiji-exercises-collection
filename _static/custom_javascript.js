@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Handle Markdown folder links, images and PDFs
+    // handle Markdown logo image links
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default click behavior (opening the image)
+            const imageName = img.src.split('/').pop();
+            if (imageName === 'iac_logo_white.png') {
+                window.location.href = 'https://iac.hms.harvard.edu'; // Navigate to the specified website
+                return;
+            }
+        });
+    });
+    // handle Markdown links to download of files with specified extensions
     const markdownLinks = document.querySelectorAll('a');
     markdownLinks.forEach(link => {
         link.addEventListener('click', function (event) {
