@@ -1,6 +1,6 @@
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)]()
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![pdf](https://img.shields.io/badge/PDF-Download-blue.svg)](_build/html/fiji_exercises_book.pdf)
+[![pdf](https://img.shields.io/badge/PDF-Download-blue.svg)](_build/html/fiji-exercises-book.pdf)
 
 # Fiji Exercises Collection
 <strong>By the <a href="https://iac.hms.harvard.edu/" target="_blank">Image Analysis Collaboratory</a> @ Harvard Medical School</strong>
