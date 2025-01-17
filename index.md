@@ -1,4 +1,4 @@
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)]()
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://jupyterbook.org)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![pdf](https://img.shields.io/badge/PDF-Download-blue.svg)](_build/html/fiji-exercises-book.pdf)
 
