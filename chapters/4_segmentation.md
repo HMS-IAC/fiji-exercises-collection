@@ -2,7 +2,7 @@
 
 ## 4.1 - DAPI segmentation with thresholding
 
-1. open the [DAPI.tif](../images/DAPI.tif) image (drag & drop, or `File > Open`)
+1. open the [DAPI.tif](../data/DAPI.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
 3. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 4. `Image > Adjust > Threshold` (IJ:28.2.4)
@@ -30,7 +30,7 @@
 
 ## 4.2 - DAPI segmentation with filters and thresholding
 
-1. open the [DAPI_noise.tif](../images/DAPI_noise.tif) image (drag & drop, or `File > Open`)
+1. open the [DAPI_noise.tif](../data/DAPI_noise.tif) image (drag & drop, or `File > Open`)
 2. change LUT to Grays
 3. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 4. `Image > Adjust > Threshold` (IJ:28.2.4)
@@ -62,7 +62,7 @@
 
 ## 4.3 - DAPI segmentation with Weka
 
-1. open the [hela.tif](../images/hela.tif) image (drag & drop, or `File > Open`)
+1. open the [hela.tif](../data/hela.tif) image (drag & drop, or `File > Open`)
 2. change `LUT` to Grays
 3. `Plugins > Segmentation > Trainable Weka Segmentation`
 4. draw a line outside a nucleus

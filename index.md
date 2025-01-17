@@ -1,7 +1,7 @@
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://jupyterbook.org)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-[![pdf](https://img.shields.io/badge/PDF-Download-blue.svg)](./_build/html/pdf/fiji-exercises-book.pdf)
+[![pdf](https://img.shields.io/badge/PDF-Download-blue.svg)](data/fiji-exercises-book.pdf)
 
 # Fiji Exercises Collection
 <strong>By the <a href="https://iac.hms.harvard.edu/" target="_blank">Image Analysis Collaboratory</a> @ Harvard Medical School</strong>
@@ -18,7 +18,7 @@ Here is an example illustrating the structure of the exercises:
 
 <span style="font-size: 1.5em;">**1.1 - Image inspection**</span>
 
-1. open the [single_channel.tif](images/single_channel.tif) image (drag & drop, or `File > Open`)
+1. open the [single_channel.tif](data/single_channel.tif) image (drag & drop, or `File > Open`)
 2. `Image > Duplicate` (IJ:28.9) (**shift + d**)
 3. `Analyze > Histogram` (IJ:30.10) (**h**)
 4. click `Live`
