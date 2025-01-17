@@ -23,3 +23,7 @@ html:
       <p>
       All content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, except where noted otherwise.
       </p>
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_engine: xelatex

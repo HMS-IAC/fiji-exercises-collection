@@ -1,15 +1,15 @@
 !/bin/bash
 
 # Build the PDF
-jupyter-book build . --builder pdfhtml
+jupyter-book build . --builder pdflatex
 
 # Check if the PDF build was successful
 if [ $? -eq 0 ]; then
     echo "PDF build successful, proceeding with standard build..."
     # move the pdf folder to the data folder
-    mv _build/pdf/book.pdf data/fiji-exercises-book.pdf
+    mv _build/latex/python.pdf data/fiji-exercises-book.pdf
     # remove the pdf folder
-    rm -r _build/pdf/
+    rm -r _build/latex/
     # build the standard html book
     jupyter-book build .
 else
