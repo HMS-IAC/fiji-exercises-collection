@@ -1,6 +1,6 @@
 # 2 - Working with Multi-Channel Images
 
-## 2.1 - composite images - channels display, splitting and merging
+## 2.1 - Composite images - channels display, splitting and merging
 
 1. `File > Open Samples > Fluorescent Cells` (IJ:26.4)
 2. `Image > Color > Channels Tool` (IJ:28.7.5)
@@ -25,7 +25,7 @@
     - `Image > Color > Simulate Color Blindness`
     - `Image > Color > Dichromacy`
 
-## 2.2 - RGB images - Replace Red with Magenta
+## 2.2 - RGB images - replace red with magenta
 
 1. `File > Open Samples > Fluorescent Cells` (IJ:26.4)
 2. convert to RGB Color: `Image > Type > RGB Color` (IJ:7)
