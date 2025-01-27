@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4 - Segmentation &#8212; Fiji Exercises Collection</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b1e29c7c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/4_segmentation';</script>
+    <script src="../_static/custom_javascript.js?v=4f385ecc"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5 - Spot Detection" href="5_spot_detection.html" />
+    <link rel="prev" title="3 - Image Processing: Filters" href="3_image_processing_filters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/iac_logo_white.png" class="logo__image only-light" alt="Fiji Exercises Collection - Home"/>
+    <img src="../_static/iac_logo_white.png" class="logo__image only-dark pst-js-only" alt="Fiji Exercises Collection - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fiji Exercises Collection
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fiji Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_working_with_single_channel_images.html">1 - Working with Single-Channel Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_working_with_multi_channel_images.html">2 - Working with Multi-Channel Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_image_processing_filters.html">3 - Image Processing: Filters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4 - Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_spot_detection.html">5 - Spot Detection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/HMS-IAC/fiji-exercises-collection" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/4_segmentation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4 - Segmentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-thresholding">4.1 - DAPI segmentation with thresholding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-filters-and-thresholding">4.2 - DAPI segmentation with filters and thresholding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-labkit">4.3 - DAPI segmentation with Labkit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-double-segmentation-with-labkit">4.4 - DAPI double-segmentation with Labkit</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="segmentation">
+<h1>4 - Segmentation<a class="headerlink" href="#segmentation" title="Link to this heading">#</a></h1>
+<section id="dapi-segmentation-with-thresholding">
+<h2>4.1 - DAPI segmentation with thresholding<a class="headerlink" href="#dapi-segmentation-with-thresholding" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>open the <a class="reference download internal" download="" href="../_downloads/e22012b7da4080012192763d0b0c9fb5/DAPI.tif"><span class="xref download myst">DAPI.tif</span></a> image (drag &amp; drop, or <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span></code>)</p></li>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">LUT</span></code> to Grays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Duplicate</span></code> (IJ:28.9) (<strong>shift + d</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Threshold</span></code> (IJ:28.2.4)</p></li>
+<li><p>understand the function of the <code class="docutils literal notranslate"><span class="pre">Dark</span> <span class="pre">Background</span></code> checkbox (inspect pixel values)</p></li>
+<li><p>try setting sliders manually. Can you find a good threshold range?</p></li>
+<li><p>try different algorithms by selecting them in the left dropdown menu. Can you find one that gives a good result?</p>
+<ul class="simple">
+<li><p>NOTE: <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Auto</span> <span class="pre">Threshold</span></code>, if you want to see all at the same time</p></li>
+</ul>
+</li>
+<li><p>try different display options (<code class="docutils literal notranslate"><span class="pre">Red</span></code>, <code class="docutils literal notranslate"><span class="pre">B&amp;W</span></code>, <code class="docutils literal notranslate"><span class="pre">Over/Under</span></code>) by selecting them in the right dropdown menu, do you understand what they show?</p></li>
+<li><p>when happy with result, click <code class="docutils literal notranslate"><span class="pre">Apply</span></code></p></li>
+<li><p>save the resulting binary image: <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">As</span> <span class="pre">&gt;</span> <span class="pre">Tiff</span></code></p></li>
+<li><p>apply watershed to divide touching objects</p>
+<ul class="simple">
+<li><p>select the binary image</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Binary</span> <span class="pre">&gt;</span> <span class="pre">Watershed</span></code></p></li>
+</ul>
+</li>
+<li><p>proceed with <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">&gt;</span> <span class="pre">Analyze</span> <span class="pre">Particles</span></code> (IJ:30.2)</p>
+<ul class="simple">
+<li><p>select <code class="docutils literal notranslate"><span class="pre">Exclude</span> <span class="pre">on</span> <span class="pre">Edges</span></code> and <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">Manager</span></code></p></li>
+<li><p>click on <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+</li>
+<li><p>bonus: repeat step 12 but use the <code class="docutils literal notranslate"><span class="pre">Size</span></code> and <code class="docutils literal notranslate"><span class="pre">Circularity</span></code> options to try to exclude some particles and the <code class="docutils literal notranslate"><span class="pre">Show</span></code> dropdown menu to visualize different outputs.</p></li>
+<li><p>set the parameters you want to measure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">Measurement</span></code> (IJ:30.2)</p></li>
+<li><p>select <code class="docutils literal notranslate"><span class="pre">Area</span></code>, <code class="docutils literal notranslate"><span class="pre">Mean</span> <span class="pre">gray</span> <span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">Min</span> <span class="pre">&amp;</span> <span class="pre">max</span> <span class="pre">gray</span> <span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">Display</span> <span class="pre">label</span></code></p></li>
+<li><p>click on <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+</li>
+<li><p>select the original image (open it again as in step 1 if you do not have it)</p></li>
+<li><p>in the <code class="docutils literal notranslate"><span class="pre">ROI</span> <span class="pre">Manager</span></code>, click on <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> and then on <code class="docutils literal notranslate"><span class="pre">Measure</span></code></p></li>
+<li><p>save the <code class="docutils literal notranslate"><span class="pre">Results</span></code> table as .csv: select the table and click on <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">As</span></code></p></li>
+</ol>
+</section>
+<section id="dapi-segmentation-with-filters-and-thresholding">
+<h2>4.2 - DAPI segmentation with filters and thresholding<a class="headerlink" href="#dapi-segmentation-with-filters-and-thresholding" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>open the <a class="reference download internal" download="" href="../_downloads/a8673543bbe710dc8a73b28040c3b7c6/DAPI_noise.tif"><span class="xref download myst">DAPI_noise.tif</span></a> image (drag &amp; drop, or <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span></code>)</p></li>
+<li><p>change LUT to Grays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Duplicate</span></code> (IJ:28.9) (<strong>shift + d</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Threshold</span></code> (IJ:28.2.4)</p></li>
+<li><p>understand the function of the <code class="docutils literal notranslate"><span class="pre">Dark</span> <span class="pre">Background</span></code> checkbox (inspect pixel values)</p></li>
+<li><p>try setting sliders manually. Can you find a good threshold range?</p></li>
+<li><p>try different algorithms by selecting them in the left dropdown menu. Can you find one that gives a good result?</p>
+<ul class="simple">
+<li><p>NOTE: <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Auto</span> <span class="pre">Threshold</span></code>, if you want to see all at the same time</p></li>
+</ul>
+</li>
+<li><p>apply a filter of your choice (<code class="docutils literal notranslate"><span class="pre">Mean</span></code>, <code class="docutils literal notranslate"><span class="pre">Gaussian</span> <span class="pre">Blur</span></code>, <code class="docutils literal notranslate"><span class="pre">Median</span></code>, …)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Filters</span></code></p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Preview</span></code> checkbox</p></li>
+<li><p>change the <code class="docutils literal notranslate"><span class="pre">Radius</span></code> / <code class="docutils literal notranslate"><span class="pre">Sigma</span></code>. What happens to the image?</p></li>
+<li><p>when you are happy, click on <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+</li>
+<li><p>repeat steps 3, 7 and 8 until happy with result, then click <code class="docutils literal notranslate"><span class="pre">Apply</span></code></p></li>
+<li><p>save the resulting binary image: <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">As</span> <span class="pre">&gt;</span> <span class="pre">Tiff</span></code></p></li>
+<li><p>apply watershed to divide touching objects</p>
+<ul class="simple">
+<li><p>select the binary image</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Binary</span> <span class="pre">&gt;</span> <span class="pre">Watershed</span></code></p></li>
+</ul>
+</li>
+<li><p>proceed with <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">&gt;</span> <span class="pre">Analyze</span> <span class="pre">Particles</span></code> (IJ:30.2)</p>
+<ul class="simple">
+<li><p>select <code class="docutils literal notranslate"><span class="pre">Exclude</span> <span class="pre">on</span> <span class="pre">Edges</span></code> and <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">Manager</span></code></p></li>
+<li><p>click on <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+</li>
+<li><p>bonus: repeat step 12 but use the <code class="docutils literal notranslate"><span class="pre">Size</span></code> and <code class="docutils literal notranslate"><span class="pre">Circularity</span></code> options to try to exclude some particles and the <code class="docutils literal notranslate"><span class="pre">Show</span></code> dropdown menu to visualize different outputs.</p></li>
+<li><p>set the parameters you want to measure:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">Measurement</span></code> (IJ:30.2)</p></li>
+<li><p>select <code class="docutils literal notranslate"><span class="pre">Area</span></code>, <code class="docutils literal notranslate"><span class="pre">Mean</span> <span class="pre">gray</span> <span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">Min</span> <span class="pre">&amp;</span> <span class="pre">max</span> <span class="pre">gray</span> <span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">Display</span> <span class="pre">label</span></code></p></li>
+<li><p>click on <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+</ul>
+</li>
+<li><p>select the original image (open it again as in step 1 if you do not have it)</p></li>
+<li><p>in the <code class="docutils literal notranslate"><span class="pre">ROI</span> <span class="pre">Manager</span></code>, click on <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> and then on <code class="docutils literal notranslate"><span class="pre">Measure</span></code></p></li>
+<li><p>save the <code class="docutils literal notranslate"><span class="pre">Results</span></code> table as .csv: select the table and click on <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">As</span></code></p></li>
+</ol>
+</section>
+<section id="dapi-segmentation-with-labkit">
+<h2>4.3 - DAPI segmentation with Labkit<a class="headerlink" href="#dapi-segmentation-with-labkit" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>open the <a class="reference download internal" download="" href="../_downloads/b6418b2b697f1c2f8cbbc94c0cf69477/hela.tif"><span class="xref download myst">hela.tif</span></a> image (drag &amp; drop, or <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span></code>)</p></li>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">LUT</span></code> to Grays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Labkit</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Current</span> <span class="pre">Image</span> <span class="pre">With</span> <span class="pre">Labkit</span></code></p></li>
+<li><p>sidebar, under <code class="docutils literal notranslate"><span class="pre">Segmentation</span></code>: click <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classification</span></code></p></li>
+<li><p>topbar: select the pencil tool</p></li>
+<li><p>sidebar: select <code class="docutils literal notranslate"><span class="pre">foreground</span></code>. Draw a line inside a nucleus</p></li>
+<li><p>sidebar: select <code class="docutils literal notranslate"><span class="pre">background</span></code>. Draw a line outside a nucleus</p></li>
+<li><p>sidebar: click the play button next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixelclassification</span></code></p></li>
+<li><p>repeat the last three steps until happy with result</p></li>
+<li><p>click the drop down menu next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classifier</span></code>. Select <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Probability</span> <span class="pre">Map</span> <span class="pre">in</span> <span class="pre">ImageJ</span></code></p></li>
+<li><p>inspect the probability maps, do you understand the meaning of the values of the pixels in the different channels?</p></li>
+<li><p>export the segmentation: click the drop down menu next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classifier</span></code>: <code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">&gt;</span> <span class="pre">Show</span> <span class="pre">Segmentation</span> <span class="pre">Results</span> <span class="pre">in</span> <span class="pre">ImageJ</span></code></p></li>
+<li><p>inspect results, do you understand the meaning of the pixel values?</p>
+<ul class="simple">
+<li><p>you now have a binary image, but not the kind Fiji likes</p></li>
+<li><p>to measure, proceed by thresholding (<code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Threshold...</span></code>): “set” both threshold values to 1, then Analyze Particles, etc</p></li>
+<li><p>alternatively, multiply all values in the Labkit output image by 255, then apply Binarize, etc</p></li>
+</ul>
+</li>
+<li><p>save the resulting image with name “myLabkitHeLa1.tif”: <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">As</span> <span class="pre">&gt;</span> <span class="pre">Tiff</span></code></p></li>
+</ol>
+</section>
+<section id="dapi-double-segmentation-with-labkit">
+<h2>4.4 - DAPI double-segmentation with Labkit<a class="headerlink" href="#dapi-double-segmentation-with-labkit" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>open the <a class="reference download internal" download="" href="../_downloads/b6418b2b697f1c2f8cbbc94c0cf69477/hela.tif"><span class="xref download myst">hela.tif</span></a> image (drag &amp; drop, or <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span></code>)</p></li>
+<li><p>change <code class="docutils literal notranslate"><span class="pre">LUT</span></code> to Grays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">&gt;</span> <span class="pre">Enhance</span> <span class="pre">Contrast</span></code>. check <code class="docutils literal notranslate"><span class="pre">Equalize</span> <span class="pre">histogram</span></code>. Then, <code class="docutils literal notranslate"><span class="pre">OK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Labkit</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Current</span> <span class="pre">Image</span> <span class="pre">With</span> <span class="pre">Labkit</span></code></p></li>
+<li><p>sidebar, under <code class="docutils literal notranslate"><span class="pre">Segmentation</span></code>: click <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classification</span></code></p></li>
+<li><p>sidebar, under <code class="docutils literal notranslate"><span class="pre">Labeling</span></code>: click <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">label</span></code></p></li>
+<li><p>rename <code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">1</span></code> by doublecklicking. For instance into <code class="docutils literal notranslate"><span class="pre">cytoplasm</span></code>. Optional: choose a different label color by clicking onto the color swatch.</p></li>
+<li><p>topbar: select the pencil tool</p></li>
+<li><p>sidebar: select <code class="docutils literal notranslate"><span class="pre">foreground</span></code>. Draw a line inside a nucleus</p></li>
+<li><p>sidebar: select <code class="docutils literal notranslate"><span class="pre">cytoplasm</span></code>. Draw a line inside the cytoplasm</p></li>
+<li><p>sidebar: select <code class="docutils literal notranslate"><span class="pre">background</span></code>. Draw a line where there is no cell</p></li>
+<li><p>sidebar: click the play button next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixelclassification</span></code></p></li>
+<li><p>repeat the last four steps until happy with result</p></li>
+<li><p>click the drop down menu next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classifier</span></code>. Select <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Probability</span> <span class="pre">Map</span> <span class="pre">in</span> <span class="pre">ImageJ</span></code></p></li>
+<li><p>inspect the probability maps, do you understand the meaning of the values of the pixels in the different channels?</p></li>
+<li><p>export the segmentation: click the drop down menu next to <code class="docutils literal notranslate"><span class="pre">Labkit</span> <span class="pre">Pixel</span> <span class="pre">Classifier</span></code>: <code class="docutils literal notranslate"><span class="pre">Segmentation</span> <span class="pre">&gt;</span> <span class="pre">Show</span> <span class="pre">Segmentation</span> <span class="pre">Results</span> <span class="pre">in</span> <span class="pre">ImageJ</span></code></p></li>
+<li><p>inspect results, do you understand the meaning of the pixel values?</p>
+<ul class="simple">
+<li><p>you now have an image with three values</p></li>
+<li><p>to measure, proceed by thresholding (<code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">&gt;</span> <span class="pre">Adjust</span> <span class="pre">&gt;</span> <span class="pre">Threshold...</span></code>) at 0, 1, and 2, to extract each class (use Set and then set both thresholds to 0, 1, or 2)</p></li>
+<li><p>then proceed with Analyze Particles, etc for each of the classes of
+interest (nuclei and cytoplasm)</p></li>
+</ul>
+</li>
+<li><p>Bonus round: play with Settings</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3_image_processing_filters.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3 - Image Processing: Filters</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="5_spot_detection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5 - Spot Detection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-thresholding">4.1 - DAPI segmentation with thresholding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-filters-and-thresholding">4.2 - DAPI segmentation with filters and thresholding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-segmentation-with-labkit">4.3 - DAPI segmentation with Labkit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dapi-double-segmentation-with-labkit">4.4 - DAPI double-segmentation with Labkit</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Image Analysis Collaboratory @ Harvard Medical School
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+All content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, except where noted otherwise.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
