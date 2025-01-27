@@ -53,11 +53,11 @@ useful [Find Maxima info](https://forum.image.sc/t/new-maxima-finder-menu-in-fij
 1. Repeat [5.2](#algorithmic-spot-detection-with-find-maxima) with the `with_noise_8000.tif` image in folder [spot_detection](../data/spot_detection.zip)
     - consider smoothing the image first. You can try any of the filter in the `Process > Filters` menu:
         - e.g. `Process > Filters > Gaussian Blur`, `Process > Filters > Mean`, ...
-        - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter wuth radius 1 (3x3 kernel)
+        - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter with radius 1 (3x3 kernel)
 2. Repeat [5.3](#automatic-spot-segmentation-with-thresholding) with the `with_noise_8000.tif` image in folder [spot_detection](../data/spot_detection.zip)
     - consider smoothing the image first. You can try any of the filter in the `Process > Filters` menu:
         - e.g. `Process > Filters > Gaussian Blur`, `Process > Filters > Mean`, ...
-        - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter wuth radius 1 (3x3 kernel)
+        - NOTE: the `Smooth` operation under the `Process > Smooth` is a mean filter with radius 1 (3x3 kernel)
 3. Compare and comment on the performance of the two methods
     - Which one is better?
     - Why/how is it better?
